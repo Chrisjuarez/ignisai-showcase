@@ -6,6 +6,14 @@ IgnisAI is a wildfire map for the western United States. It brings together acti
 
 ![IgnisAI live map with wildfire incident markers across the western United States](screenshots/live-incident-map.jpg)
 
+## Why I Built It
+
+I started IgnisAI as a capstone project to explore how wildfire data from different sources could fit on one map. I wanted to make it easier to compare what has been observed with where a model suggests a fire might spread.
+
+## How It Works
+
+A React and Mapbox dashboard reads incident, perimeter, and alert data from an Express API. A separate Python service uses recent satellite detections, weather, terrain, and fuel data to run a PyTorch ConvLSTM model. The map displays the results as a timeline, separate from reported perimeters and hotspots.
+
 ## Try a Historical Forecast
 
 Open **Past fires** and select **Palisades Fire**. Use the timeline to step through the advisory forecast and compare it with observed layers where available.
