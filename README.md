@@ -1,23 +1,13 @@
 # IgnisAI
 
-IgnisAI is a wildfire map for the western United States. It brings together active incidents, reported perimeters, satellite hotspots, and fire-weather alerts. Advisory spread forecasts are shown separately from observed fire data.
+I started IgnisAI as my Cal State Fullerton capstone after the January 2025 Eaton and Palisades fires. I wanted to see whether publicly available data could help fire crews answer a practical question: where might a fire spread next, and what’s in its path?
 
-**[Open the live map](https://ignisai-frontend.onrender.com/dashboard)** · No account needed to explore.
+**[Explore the live map](https://ignisai-frontend.onrender.com/dashboard)**
 
-![IgnisAI live map with wildfire incident markers across the western United States](screenshots/live-incident-map.jpg)
+![IgnisAI incident map across the western United States](screenshots/live-incident-map.jpg)
 
-## Why I Built It
+The map shows reported fire perimeters and NASA satellite detections. A Python forecast service combines recent detections with NOAA weather, terrain, and fuel data to estimate how a fire might spread over time. The forecast is shown separately from what’s been observed.
 
-I started IgnisAI as a capstone project to explore how wildfire data from different sources could fit on one map. I wanted to make it easier to compare what has been observed with where a model suggests a fire might spread.
+To see an example, open **Past fires → Palisades Fire**. Forecasts are advisory, not official perimeters or evacuation guidance.
 
-## How It Works
-
-A React and Mapbox dashboard reads incident, perimeter, and alert data from an Express API. A separate Python service uses recent satellite detections, weather, terrain, and fuel data to run a PyTorch ConvLSTM model. The map displays the results as a timeline, separate from reported perimeters and hotspots.
-
-## Try a Historical Forecast
-
-Open **Past fires** and select **Palisades Fire**. Use the timeline to step through the advisory forecast and compare it with observed layers where available.
-
-**For situational awareness only.** Forecasts are not official fire perimeters or evacuation guidance. Follow local authorities for emergency instructions.
-
-This repository is a public showcase. The application source code and model weights are private.
+The source code and model weights are private.
